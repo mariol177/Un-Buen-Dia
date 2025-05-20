@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - Un Buen Día</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        #romance .era-image,
+        #camila .era-image,
+        #familia .era-image,
+        #cxoxo .era-image {
+            position: relative;
+        }
+
+        .hover-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            object-fit: cover;
+        }
+
+        #romance .hover-image {
+            object-position: center 30%;
+        }
+
+        .era-image:hover .hover-image {
+            opacity: 1;
+        }
+
+        .era-image:hover img:not(.hover-image) {
+            opacity: 0;
+        }
+
+        .era-image img {
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">INICIO</a>
+            <a href="galeria.html" class="nav-link">GALERÍA</a>
+            <a href="videos.html" class="nav-link">VIDEOS</a>
+            <a href="audios.html" class="nav-link">AUDIOS</a>
+        </div>
+    </nav>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="videos/Camila Cabello Official Trailer Yours C, Tour.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main class="gallery-container">
+        <h1 class="gallery-title">GALERÍA</h1>
+        
+        <div class="eras-grid">
+            <div class="era-card" id="cxoxo">
+                <div class="era-image">
+                    <img src="images/Camila Cabello 2024 (poster by @luskas_design).jpg" alt="C,XOXO Era">
+                    <img src="images/de08e7ce52510009843294e1dc714e46.jpg" alt="C,XOXO Hover" class="hover-image">
+                </div>
+                <div class="era-content">
+                    <h2>C,XOXO</h2>
+                    <p>2024</p>
+                    <div class="era-description">
+                        <p>La era más reciente, con un estilo urbano y moderno</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="era-card" id="familia">
+                <div class="era-image">
+                    <img src="images/FAMILIA by Camila Cabello (1).jpg" alt="Familia Era">
+                    <img src="images/955fba258fe6ee81bf84ecd5920a6a2e.jpg" alt="Familia Hover" class="hover-image">
+                </div>
+                <div class="era-content">
+                    <h2>FAMILIA</h2>
+                    <p>2022</p>
+                    <div class="era-description">
+                        <p>Un álbum que celebra las raíces y la cultura latina</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="era-card" id="romance">
+                <div class="era-image">
+                    <img src="images/Camila Cabello (1).jpg" alt="Romance Era">
+                    <img src="images/e2dd85227851c4c92553f2b2eeff5340.jpg" alt="Romance Hover" class="hover-image">
+                </div>
+                <div class="era-content">
+                    <h2>ROMANCE</h2>
+                    <p>2019</p>
+                    <div class="era-description">
+                        <p>Una era romántica y soñadora</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="era-card" id="camila">
+                <div class="era-image">
+                    <img src="images/descarga (17).jpg" alt="Camila Era">
+                    <img src="images/f38970fa3af20cd4fe4550515d31131a.jpg" alt="Camila Hover" class="hover-image">
+                </div>
+                <div class="era-content">
+                    <h2>CAMILA</h2>
+                    <p>2018</p>
+                    <div class="era-description">
+                        <p>El debut como solista, marcando el inicio de una nueva etapa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Un Buen Día</p>
+            <div class="footer-links">
+                <a href="terminos.html">TÉRMINOS</a>
+                <a href="privacidad.html">PRIVACIDAD</a>
+                <a href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
