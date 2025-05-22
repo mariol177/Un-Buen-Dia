@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pequeño Mundo - Un Buen Día</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="pequenoMundo-bg">
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">INICIO</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/camila_cabello/" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@camilacabello" target="_blank" class="social-link">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-es/artist/4nDoRrQiYLoBzwC5BhVJzF" target="_blank" class="social-link">
+                <i class="fab fa-spotify"></i>
+            </a>
+            <a href="https://music.apple.com/es/artist/camila-cabello/935727853" target="_blank" class="social-link">
+                <i class="fab fa-apple"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="videos/Camila Cabello Official Trailer Yours C, Tour.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main class="narrative-container">
+        <section class="narrative-section">
+            <h1 class="main-title">PEQUEÑO MUNDO</h1>
+            <div class="narrative-content">
+                <p class="narrative-text">El "pequeño mundo" de Camila representa su universo interior, un espacio de creatividad e imaginación donde se siente segura. Desde pequeña, Camila encontró refugio en su mundo interior, creando historias y melodías que más tarde formarían parte esencial de su carrera artística. Este espacio personal le permitió desarrollar su sensibilidad musical y su estilo único como compositora, transformando sus experiencias íntimas en canciones que conectan con millones de personas en todo el mundo.</p>
+                <div style="display:flex;justify-content:center;align-items:center;margin-top:2rem;flex-direction:column;position:relative;">
+                    <img src="images/descarga (17).jpg" alt="Pequeño Mundo" id="pequeno-img" style="max-width:340px;width:100%;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;">
+                    <span id="audio-icon-pequeno" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;text-shadow:0 2px 8px rgba(0,0,0,0.5);pointer-events:none;">
+                        <i class="fas fa-play-circle"></i>
+                    </span>
+                    <audio id="pequeno-audio" src="audios/Camila Cabello - Havana (Audio) ft. Young Thug.mp3"></audio>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Un Buen Día</p>
+            <div class="footer-links">
+                <a href="terminos.html">TÉRMINOS</a>
+                <a href="privacidad.html">PRIVACIDAD</a>
+                <a href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var img = document.getElementById('pequeno-img');
+        var audio = document.getElementById('pequeno-audio');
+        var icon = document.getElementById('audio-icon-pequeno').firstElementChild;
+        if(img && audio && icon) {
+            img.addEventListener('click', function() {
+                if(audio.paused) {
+                    audio.currentTime = 0;
+                    audio.play();
+                    icon.classList.remove('fa-play-circle');
+                    icon.classList.add('fa-pause-circle');
+                } else {
+                    audio.pause();
+                    icon.classList.remove('fa-pause-circle');
+                    icon.classList.add('fa-play-circle');
+                }
+            });
+            audio.addEventListener('ended', function() {
+                icon.classList.remove('fa-pause-circle');
+                icon.classList.add('fa-play-circle');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

@@ -13,9 +13,6 @@
     <nav class="main-nav">
         <div class="nav-links">
             <a href="index.html" class="nav-link">INICIO</a>
-            <a href="galeria.html" class="nav-link">GALERÍA</a>
-            <a href="videos.html" class="nav-link">VIDEOS</a>
-            <a href="audios.html" class="nav-link">AUDIOS</a>
         </div>
         <div class="social-links">
             <a href="https://www.instagram.com/camila_cabello/" target="_blank" class="social-link">
@@ -39,11 +36,29 @@
         </video>
     </div>
 
-    <main class="hero">
-        <div class="hero-content">
+    <main class="narrative-container">
+        <section class="narrative-section">
             <h1 class="main-title">UN BUEN DÍA</h1>
-            <div class="hero-subtitle">(con Camila Cabello)</div>
-        </div>
+            <p style="font-size:1.3rem;margin-bottom:1.5rem;">(con Camila Cabello)</p>
+            <div class="narrative-content">
+                <p class="narrative-text">Explora la historia musical y vital de Camila Cabello a través de su cuerpo. Cada parte cuenta una historia única.</p>
+            </div>
+        </section>
+
+        <section class="body-section">
+            <div class="body-container">
+                <img src="images/bf26b5a818ac87f7b1732ba52bc35e4c.jpg" alt="Camila Cabello" class="body-image">
+                
+                <!-- Áreas clickeables -->
+                <a href="camila.html" class="body-area" id="brain" data-story="El cerebro de Camila, donde nacen todas sus ideas creativas. Aquí se gestan las melodías y letras que han cautivado al mundo. Cada canción es un viaje a través de sus pensamientos más profundos."></a>
+                <a href="cxoxo.html" class="body-area" id="eyes" data-story="Sus ojos, ventanas al alma que han presenciado momentos inolvidables. Desde sus primeros pasos en Cuba hasta los escenarios más grandes del mundo, cada mirada cuenta una historia."></a>
+                <a href="romance.html" class="body-area" id="heart" data-story="Camila Cabello nació en Cojímar, La Habana, Cuba, hija de madre cubana y padre mexicano. Desde pequeña, vivió entre Cuba y México, lo que le permitió absorber la riqueza cultural de ambos países. A los seis años, emigró con su madre a Estados Unidos, llevando consigo una mochila con su diario de Winnie the Pooh y su muñeca favorita, símbolos de su infancia y sueños."></a>
+                <a href="familia.html" class="body-area" id="hourglass" data-story="El reloj de arena, representando el tiempo y la evolución de su carrera. Cada grano de arena es un momento, una experiencia que ha moldeado su arte y su persona."></a>
+            </div>
+            <div class="story-display">
+                <p class="story-text">Haz clic en cualquier parte del cuerpo para descubrir su historia</p>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -57,6 +72,29 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const bodyAreas = document.querySelectorAll('.body-area');
+            const storyDisplay = document.querySelector('.story-text');
+
+            bodyAreas.forEach(area => {
+                if (area.id !== 'heart') {
+                    area.addEventListener('click', function() {
+                        const story = this.getAttribute('data-story');
+                        storyDisplay.textContent = story;
+                        storyDisplay.style.opacity = '1';
+                    });
+                }
+
+                area.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = 'rgba(255, 105, 180, 0.3)';
+                });
+
+                area.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'transparent';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

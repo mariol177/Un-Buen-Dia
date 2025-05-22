@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferente - Un Buen Día</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="diferente-bg">
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">INICIO</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/camila_cabello/" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@camilacabello" target="_blank" class="social-link">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://open.spotify.com/intl-es/artist/4nDoRrQiYLoBzwC5BhVJzF" target="_blank" class="social-link">
+                <i class="fab fa-spotify"></i>
+            </a>
+            <a href="https://music.apple.com/es/artist/camila-cabello/935727853" target="_blank" class="social-link">
+                <i class="fab fa-apple"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="videos/Camila Cabello Official Trailer Yours C, Tour.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main class="narrative-container">
+        <section class="narrative-section">
+            <h1 class="main-title">DIFERENTE</h1>
+            <div class="narrative-content">
+                <p class="narrative-text">Para Camila Cabello, la experiencia de un amor correspondido es "diferente" a cualquier otra forma de amor que había experimentado anteriormente. Esta diferencia marca un contraste significativo entre amar a alguien desde la distancia y compartir un amor mutuo y recíproco. En su música, Camila explora esta distinción con profunda introspección, capturando la intensidad emocional que surge cuando dos personas comparten sentimientos auténticos. Lo "diferente" también refleja su evolución personal y artística, mostrando cómo cada nueva experiencia amorosa le ha permitido descubrir nuevas facetas de sí misma y de su creatividad. Esta perspectiva única sobre el amor ha resonado con millones de fans que se identifican con la honestidad y vulnerabilidad que Camila plasma en sus canciones.</p>
+                <div class="audio-image-container" style="display:flex;flex-direction:column;align-items:center;margin-top:2rem;position:relative;">
+                    <img src="images/Camila Cabello (1).jpg" alt="Camila Cabello" id="diferente-img" class="camila-img-small" style="cursor:pointer;">
+                    <span id="audio-icon" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:3rem;color:white;text-shadow:0 2px 8px rgba(0,0,0,0.5);pointer-events:none;">
+                        <i class="fas fa-play-circle"></i>
+                    </span>
+                    <audio id="diferente-audio" src="audios/Shameless.mp3"></audio>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Un Buen Día</p>
+            <div class="footer-links">
+                <a href="terminos.html">TÉRMINOS</a>
+                <a href="privacidad.html">PRIVACIDAD</a>
+                <a href="contacto.html">CONTACTO</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+// Audio play/pause sobre imagen
+const img = document.getElementById('diferente-img');
+const audio = document.getElementById('diferente-audio');
+const icon = document.getElementById('audio-icon').querySelector('i');
+if (img && audio && icon) {
+    img.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            icon.classList.remove('fa-play-circle');
+            icon.classList.add('fa-pause-circle');
+        } else {
+            audio.pause();
+            icon.classList.remove('fa-pause-circle');
+            icon.classList.add('fa-play-circle');
+        }
+    });
+    audio.addEventListener('ended', function() {
+        icon.classList.remove('fa-pause-circle');
+        icon.classList.add('fa-play-circle');
+    });
+}
+</script>
+</body>
+</html>
